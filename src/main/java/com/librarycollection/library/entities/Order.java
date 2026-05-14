@@ -15,8 +15,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_order")
 public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -71,6 +73,10 @@ public class Order implements Serializable {
 
 	public Long getOrderId() {
 		return orderId;
+	}
+
+	public List<OrderItem> getItems() {
+		return items;
 	}
 
 	@Override

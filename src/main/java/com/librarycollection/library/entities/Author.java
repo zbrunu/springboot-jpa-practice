@@ -10,8 +10,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_author")
 public class Author implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -41,6 +43,10 @@ public class Author implements Serializable {
 
 	public Long getauthorId() {
 		return authorId;
+	}
+	
+	public List<Book> getBooks() {
+		return books;
 	}
 
 	@Override

@@ -13,8 +13,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "tb_book")
 public class Book implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -92,10 +94,6 @@ public class Book implements Serializable {
 
 	public List<BooksGenre> getBookGenres() {
 		return bookGenres;
-	}
-
-	public void setBookGenres(List<BooksGenre> bookGenres) {
-		this.bookGenres = bookGenres;
 	}
 
 	public Long getbookId() {
