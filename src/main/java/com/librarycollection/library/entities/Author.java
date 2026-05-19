@@ -41,7 +41,7 @@ public class Author implements Serializable {
 		this.name = name;
 	}
 
-	public Long getauthorId() {
+	public Long getAuthorId() {
 		return authorId;
 	}
 	

@@ -36,9 +36,6 @@ public class Book implements Serializable {
 	@JoinColumn(name = "author_id")
 	private Author author;
 
-	@OneToMany(mappedBy = "book")
-	private List<BooksGenre> bookGenres = new ArrayList<>();
-
 	public Book() {
 	}
 
@@ -92,11 +89,7 @@ public class Book implements Serializable {
 		this.author = author;
 	}
 
-	public List<BooksGenre> getBookGenres() {
-		return bookGenres;
-	}
-
-	public Long getbookId() {
+	public Long getBookId() {
 		return bookId;
 	}
 

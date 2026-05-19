@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.librarycollection.library.entities.Order;
+import com.librarycollection.library.entities.User;
 import com.librarycollection.library.repositories.OrderRepository;
 
 @Service
@@ -22,6 +23,14 @@ public class OrderService {
 	public Order findById(Long id) {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
+	}
+
+	public Order insert(Order obj) {
+		return repository.save(obj);
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 
 }

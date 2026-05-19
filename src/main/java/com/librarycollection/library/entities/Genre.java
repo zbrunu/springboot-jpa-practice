@@ -22,9 +22,6 @@ public class Genre implements Serializable {
 	private Long genreId;
 	private String name;
 
-	@OneToMany(mappedBy = "genre")
-	private List<BooksGenre> bookGenres = new ArrayList<>();
-
 	public Genre() {
 	}
 
@@ -44,10 +41,6 @@ public class Genre implements Serializable {
 
 	public Long getGenreId() {
 		return genreId;
-	}
-
-	public List<BooksGenre> getBookGenres() {
-		return bookGenres;
 	}
 
 	@Override

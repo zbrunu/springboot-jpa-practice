@@ -14,13 +14,21 @@ public class BookService {
 
 	@Autowired
 	private BookRepository repository;
-	
-	public List<Book> findAll(){
+
+	public List<Book> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public Book findById(Long id) {
 		Optional<Book> obj = repository.findById(id);
 		return obj.get();
+	}
+
+	public Book insert(Book obj) {
+		return repository.save(obj);
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
 }

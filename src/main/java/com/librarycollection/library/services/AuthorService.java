@@ -14,14 +14,22 @@ public class AuthorService {
 
 	@Autowired
 	private AuthorRepository repository;
-	
-	public List<Author> findAll(){
+
+	public List<Author> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public Author findById(Long id) {
 		Optional<Author> obj = repository.findById(id);
 		return obj.get();
 	}
-	
+
+	public Author insert(Author obj) {
+		return repository.save(obj);
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
 }
